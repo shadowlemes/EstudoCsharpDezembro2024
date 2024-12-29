@@ -1,23 +1,27 @@
 ﻿using System;
+using Cadastro;
 
-class Program
+namespace Inicio
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine(DateTime.Now);
-        Perguntas();
-    }
-    static void Perguntas()
-    {
-        string nome;
-        int ano = 0;
-        int data = DateTime.Now.Year;       
-        Console.Write("Insira seu nome: ");
-        nome = Console.ReadLine()!;
-        Console.Clear();
-        Console.Write("Qual sua data de nascimento? ");
-        ano = int.Parse(Console.ReadLine()!);
-        int calculoIdade = data - ano;
-        Console.Clear();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Sistema de cadastro\n");
+            Console.Write("Primeiro nome:");
+            string nome = Console.ReadLine()!;
+            Console.Write("Sobrenome: ");
+            string sobrenome = Console.ReadLine()!;
+            Console.Write("Cidade: ");
+            string cidade = Console.ReadLine()!;
+            Console.Write("Sexo: ");
+            char sexo = char.Parse(Console.ReadLine()!);
+            Console.Write("Ano Nascimento: ");
+            int anoNascimento = int.Parse(Console.ReadLine()!);
+
+
+            CadastroPessoa objetoCadastroPessoa = new CadastroPessoa(nome, sobrenome, cidade,sexo, anoNascimento);
+            objetoCadastroPessoa.ExibirCadastro();
+        }        
     }
 }
