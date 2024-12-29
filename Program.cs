@@ -20,6 +20,7 @@ namespace Inicio
             int anoNascimento = int.Parse(Console.ReadLine()!);
 
 
+
             CadastroPessoa objetoCadastroPessoa = new CadastroPessoa(nome, sobrenome, cidade,sexo, anoNascimento);
             objetoCadastroPessoa.ExibirCadastro();
         }        
